@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.everis</groupId>
-	<artifactId>1-practica-cloud-compra-rest</artifactId>
+	<artifactId>1-practica-cloud-reorden-config</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>1-practica-cloud-compra-rest</name>
+	<name>1-practica-cloud-reorden-config</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -21,16 +21,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
 		<dependency>

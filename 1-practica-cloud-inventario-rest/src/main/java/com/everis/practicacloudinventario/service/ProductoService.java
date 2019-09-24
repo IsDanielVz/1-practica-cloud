@@ -15,4 +15,8 @@ public class ProductoService {
 	public Producto findByNombre(String nombre) {
 		return productoRespository.findByNombre(nombre);
 	}
+	
+	public Producto findById(Long id) {
+		return productoRespository.findById(id).get();
+	}
 }
