@@ -13,10 +13,12 @@ import org.springframework.web.client.RestTemplate;
 
 import com.everis.practicacloudcompra.model.ReordenModel;
 import com.everis.practicacloudcompra.model.responses.CompraResponses;
+import com.everis.practicacloudcompra.proxy.CompraServiceProxy;
 
 @RestController
 public class CompraController {
-	
+	@Autowired
+	CompraServiceProxy compraServiceProxy;
 	@Autowired
 	private ReordenModel reordenModel;
 	@GetMapping("/compra")
@@ -26,13 +28,14 @@ public class CompraController {
 	
 	@GetMapping("/compra/id/{id}/cantidad/{cantidad}")
 	public CompraResponses comprar(@PathVariable Long id, @PathVariable int cantidad) {
-		String url = "http://192.168.1.73:8000/inventario/id/{id}";
+//		String url = "http://192.168.1.73:8000/inventario/id/{id}";
 		CompraResponses compraResponses = new CompraResponses();
-		Map<String, Long> uriVariables = new HashMap<>();
-		uriVariables.put("id", id);
+//		Map<String, Long> uriVariables = new HashMap<>();
+//		uriVariables.put("id", id);
 		try {
-			ResponseEntity<CompraResponses> respuesta = new RestTemplate().getForEntity(url, CompraResponses.class, uriVariables);
-			compraResponses = respuesta.getBody();
+//			ResponseEntity<CompraResponses> respuesta = new RestTemplate().getForEntity(url, CompraResponses.class, uriVariables);
+//			compraResponses = respuesta.getBody();
+			compraResponses = compraServiceProxy.retrieveProducto(id);
 			Long stock = compraResponses.getProducto().getStock();
 			Long ventaMaxima = stock - (stock* reordenModel.getReorden()/100);
 			//System.out.println(stock+", "+ ventaMaxima + ","+cantidad+", " + reordenModel.getReorden());
