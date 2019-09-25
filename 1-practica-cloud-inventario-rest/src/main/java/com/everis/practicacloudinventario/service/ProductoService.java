@@ -16,7 +16,11 @@ public class ProductoService {
 		return productoRespository.findByNombre(nombre);
 	}
 	
-	public Producto findById(Long id) {
+	public Producto findById(int id) {
 		return productoRespository.findById(id).get();
+	}
+	
+	public Producto actualizarStock(Producto producto) {
+		return productoRespository.save(producto);
 	}
 }
