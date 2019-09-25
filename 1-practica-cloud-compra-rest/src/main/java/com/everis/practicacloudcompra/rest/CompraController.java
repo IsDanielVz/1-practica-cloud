@@ -26,7 +26,7 @@ public class CompraController {
 	
 	@GetMapping("/compra/id/{id}/cantidad/{cantidad}")
 	public CompraResponses comprar(@PathVariable Long id, @PathVariable int cantidad) {
-		String url = "http://localhost:8000/inventario/id/{id}";
+		String url = "http://192.168.1.73:8000/inventario/id/{id}";
 		CompraResponses compraResponses = new CompraResponses();
 		Map<String, Long> uriVariables = new HashMap<>();
 		uriVariables.put("id", id);
