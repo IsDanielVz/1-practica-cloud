@@ -11,6 +11,6 @@ import com.everis.practicacloudcompra.model.responses.CompraResponses;
 @RibbonClient(name = "producto-service")
 public interface CompraServiceProxy {
 	
-	@GetMapping("/compra/id/{id}/")
-	public CompraResponses retrieveProducto(@PathVariable Long id);
+	@GetMapping("/inventario/id/{id}/")
+	public CompraResponses retrieveProducto(@PathVariable int id);
 }
