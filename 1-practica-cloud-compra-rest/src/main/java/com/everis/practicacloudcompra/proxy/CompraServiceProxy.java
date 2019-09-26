@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.everis.practicacloudcompra.model.responses.CompraResponses;
 
-@FeignClient(name = "producto-service")
-@RibbonClient(name = "producto-service")
+@FeignClient(name = "PRACTICA-CLOUD-INVENTARIO-REST")
+@RibbonClient(name = "PRACTICA-CLOUD-INVENTARIO-REST")
 public interface CompraServiceProxy {
 	
 	@GetMapping("/inventario/id/{id}/")
